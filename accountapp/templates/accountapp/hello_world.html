@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="height: 20rem; background-color: #38df81;  border-radius: 1rem; margin: 2rem;">
+    <div style="text-align:center;">
+
         <h1 class="letter_logo">
             Hello World List
         </h1>
@@ -16,9 +17,11 @@
 
         <h1>
             {% if context %}
-                {{ context.text }}
+                {% for hello_world in context %}
+                    {{ hello_world.text }}
+                    <br>
+                {% endfor %}
             {% endif%}
         </h1>
-
     </div>
 {% endblock %}
