@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8"
-    <title>base</title>
-</head>
+<html lang = "ko">
+
+{% include 'head.html' %}
+
 <body>
-    안녕하세요 반갑습니다
+    {% include 'header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
 </body>
 </html>
