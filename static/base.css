@@ -1,0 +1,17 @@
+.header_div {
+    text-align:center; margin: 2rem 0;
+}
+
+.footer_div {
+    text-align:center; margin: 2rem 0;
+}
+
+.footer_link {
+    font-size: .6rem;
+    margin-bottom: 1.5rem;
+}
+
+.letter_logo{
+    font-family: 'Lobster', cursive;
+}
+
