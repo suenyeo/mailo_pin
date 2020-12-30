@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="text-align:center;">
+        <div style="text-aling: center">
+            <h2 class="letter_logo">Login</h2>
+        </div>
+        <div>
+            <Form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="btn btn-primary">
+            </Form>
+        </div>
+    </div>
+{% endblock %}
