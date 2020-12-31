@@ -16,7 +16,7 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'target_article'
     template_name = 'articleapp/list.html'
-    paginate_by = 2
+    paginate_by = 5
 
 @method_decorator(login_required, 'get')
 @method_decorator(login_required, 'post')

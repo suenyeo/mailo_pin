@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView
 
 from articleapp.models import Article
+from commentapp.decorators import comment_ownership_requried
 from commentapp.forms import CommentCreationForm
 from commentapp.models import Comment
 
@@ -34,4 +35,4 @@ class CommentDeleteView(DeleteView):
     template_name = 'commentapp/delete.html'
 
     def get_success_url(self):
-        return reverse('articleapp:detail', kwargs={'pk':self.object.article.pk})
+        return reverse ('articleapp:detail', kwargs={'pk':self.object.article.pk})
