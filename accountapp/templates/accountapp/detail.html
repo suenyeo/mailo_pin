@@ -8,37 +8,47 @@
                 {{ target_user.date_joined }}
             </p>
             {% if target_user.profile %}
-                <img src = "{{ target_user.profile.image.url }}]" class="profile_img" alt="">
+                <img src = "{{ target_user.profile.image.url }}" class="profile_img" alt="">
+
                 <h2 style="font-family:'NanumSquareB'; margin-bottom:rem;">
                     {{ target_user.profile.nickname }}
                 </h2>
                 <h4 style="margin-bottom:3rem;">
                     {{ target_user.profile.message }}
                 </h4>
-            {% else%}
-                <a href="{% url 'profileapp:create' %}">
-                    <h2 style="font-family:'NanumSquareB';">
-                        Create Profile
+            {% else %}
+                {% if target_user == user %}
+                    <a href="{% url 'profileapp:create' %}">
+                        <h2 style="font-family:'NanumSquareB';">
+                            Create Profile
+                        </h2>
+                    </a>
+                {% else %}
+                    <h2 style="font-family:'NanumSquareB'; margin-bottom:rem;">
+                        Profile 미설정 유저 
                     </h2>
-                </a>
+                {% endif %}
             {% endif %}
 
             {% if target_user == user %}
-            <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                <p>
-                    Edit Profile
-                </p>
-            </a>
-            <a href = "{% url 'accountapp:update' pk=target_user.pk %}">
-                <p>
-                    Changing Info
-                </p>
-            </a>
-            <a href = "{% url 'accountapp:delete' pk=target_user.pk %}">
-                <p>
-                    Quit
-                </p>
-            </a>
+                {% if target_user.profile %}
+                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                        <p>
+                            Edit Profile
+                        </p>
+                    </a>
+                {% endif %}
+
+                <a href = "{% url 'accountapp:update' pk=target_user.pk %}">
+                    <p>
+                        Changing Info
+                    </p>
+                </a>
+                <a href = "{% url 'accountapp:delete' pk=target_user.pk %}">
+                    <p>
+                        Quit
+                    </p>
+                </a>
             {% endif %}
         </div>
 
