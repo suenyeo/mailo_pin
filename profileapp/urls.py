@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 
-app_name ='profile'
+from profileapp.views import ProfileCreateView
+
+app_name = 'profileapp'
 
 urlpatterns = [
-    path('profiles/', include('profileapp.urls')),
+    path('create/', ProfileCreateView.as_view(), name = 'create')
 ]
