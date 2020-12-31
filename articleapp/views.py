@@ -12,6 +12,11 @@ from articleapp.forms import ArticleCreationForm
 from articleapp.models import Article
 from commentapp.forms import CommentCreationForm
 
+class ArticleListView(ListView):
+    model = Article
+    context_object_name = 'target_article'
+    template_name = 'articleapp/list.html'
+    paginate_by = 2
 
 @method_decorator(login_required, 'get')
 @method_decorator(login_required, 'post')
@@ -48,7 +53,6 @@ class ArticleUpdateView(UpdateView):
         return reverse('articleapp:detail', kwargs={'pk':self.object.pk})
 
 
-
 @method_decorator(article_ownership_requried, 'get')
 @method_decorator(article_ownership_requried, 'post')
 class ArticleDeleteView(DeleteView):
@@ -58,10 +62,4 @@ class ArticleDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('articleapp:list')
-
-class ArticleListView(ListView):
-    model = Article
-    context_object_name = 'target_article'
-    template_name = 'articleapp/list.html'
-    paginate_by = 2
 
