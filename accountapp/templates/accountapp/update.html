@@ -8,7 +8,7 @@
             <h3 class="letter_logo mb-3">Login</h3>
         </div>
         <div style="text-align:center; max-width:60rem; margin:4rem auto">
-            <Form action="{% url 'accountapp:update' pk=user.pk %}" method="post">
+            <Form action="{% url 'accountapp:update' pk=target_user.pk %}" method="post">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                 <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
