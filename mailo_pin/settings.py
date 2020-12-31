@@ -55,9 +55,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrap4',
-    'pillow',
+    #'pillow',
 
     'accountapp',
+    'profileapp',
 
 ]
 
