@@ -21,3 +21,10 @@
     border-radius:20rem;
     margin-bottom:2rem;
 }
+
+.article_detail_img{
+    width: 75rem;
+    boder-radius:1rem;
+    margin-bottom:5rem;
+    align-items: center;
+}
