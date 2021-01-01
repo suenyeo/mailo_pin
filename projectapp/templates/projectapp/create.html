@@ -5,13 +5,13 @@
 
     <div style="text-align:center;">
         <div>
-            <h3>Create Article</h3>
+            <h3>Create Project</h3>
         </div>
         <div style="text-align:center; max-width:60rem; margin:4rem auto">
-            <Form action="{% url 'articleapp:create' %}" method="post" enctype="multipart/form-data">
+            <Form action="{% url 'projectapp:create' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
-                <input type="submit" class="btn btn-dark rounded-pill col-4 mt-3">
+                <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
             </Form>
         </div>
     </div>
