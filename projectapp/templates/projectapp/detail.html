@@ -13,6 +13,22 @@
                 {{ target_project.description }}
             </h5>
         </div>
+        <div class="text-center" style="margin:3rem 0 1.5rem 0">
+        {% if user.is_authenticated %}
+            {% if not subscription %}
+            <a href="{% url 'subscriptionapp:subscription'%}?project_pk={{target_project.pk}}"
+               class="btn btn-primary rounded-pill  col-3 mt-3">
+                Subscription
+            </a>
+            {% else %}
+            <a href="{% url 'subscriptionapp:subscription'%}?project_pk={{target_project.pk}}"
+               class="btn btn-dark rounded-pill  col-3 mt-3">
+                UnSubscription
+            </a>
+            {% endif %}
+        {% endif %}
+        </div>
+
         <div>
 
             {% include 'snippets/list_fragment.html' with target_article=object_list %}
