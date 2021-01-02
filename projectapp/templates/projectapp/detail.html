@@ -4,7 +4,6 @@
 
     <div>
         <div style="text-align: center; max-width:500px; margin: 4rem auto;">
-
             <img src = "{{ target_project.image.url }}" class="project_list_img" alt="" >
             <h2>
                 {{ target_project.title }}
@@ -30,11 +29,8 @@
         </div>
 
         <div>
-
             {% include 'snippets/list_fragment.html' with target_article=object_list %}
-
         </div>
     </div>
-
 
 {% endblock %}

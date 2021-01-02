@@ -17,6 +17,9 @@
            <span>Sign in</span>
         </a>
         {% else %}
+        <a href="{% url 'subscriptionapp:list' %}" class="header_nav">
+           <span>Subscriptions</span>
+        </a>
         <a href="{% url 'accountapp:detail' pk=user.pk %}" class="header_nav">
            <span>Mypage</span>
         </a>
