@@ -21,7 +21,7 @@ from django.urls import path, include
 from articleapp.views import ArticleListView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='index'),
     path('', ArticleListView.as_view(template_name='articleapp/list.html')),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
