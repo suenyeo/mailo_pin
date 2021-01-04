@@ -74,6 +74,10 @@ venv/
 
 .env
 
+.nginx.conf
+
+docker-compose.yml
+
 db.sqlite3
 
 .idea/
@@ -84,5 +88,3 @@ __pycache__/
 etc/
 
 media/
-
-.Dockerfile
