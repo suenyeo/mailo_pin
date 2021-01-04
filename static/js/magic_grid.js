@@ -282,15 +282,12 @@ let magicGrid = new MagicGrid({
   useMin: true
 });
 
-//이미지 로드에 따른 그리드 재배치 내용 추가
 var masonrys = document.getElementsByTagName("img");
 
-for (let i = 0; i < masonrys.length; i++){
-    masonrys[i].addEventListener('load', function (){
+for (let i = 0; i < masonrys.length; i++) {
+    masonrys[i].addEventListener('load', function () {
         magicGrid.positionItems();
     }, false);
 }
 
 magicGrid.listen();
-
-

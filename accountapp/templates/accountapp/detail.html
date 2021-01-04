@@ -3,49 +3,43 @@
 {% block content %}
 
     <div>
-        <div style="text-align: center; max-width:500px; margin: 4rem auto;">
-            <p>
-                {{ target_user.date_joined }}
-            </p>
+        <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
             {% if target_user.profile %}
-                <img src = "{{ target_user.profile.image.url }}" class="profile_img" alt="">
+            <img src = "{{ target_user.profile.image.url }}"
+                 class="profile_img" alt="">
 
-                <h2 style="font-family:'NanumSquareB'; margin-bottom:rem;">
-                    {{ target_user.profile.nickname }}
-                    {% if target_user.profile %}
-                    <a  class="material-icons"
-                        style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding; .4rem;"
-                        href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                        edit
-                    </a>
-                    {% endif %}
-                </h2>
-
-                <h4 style="margin-bottom:3rem;">
-                    {{ target_user.profile.message }}
-                </h4>
-            {% else %}
+            <h2 style="font-family:'NanumSquareB';">
+                {{ target_user.profile.nickname }}
                 {% if target_user == user %}
-                    <a href="{% url 'profileapp:create' %}">
-                        <h2 style="font-family:'NanumSquareB';">
-                            Create Profile
-                        </h2>
-                    </a>
-                {% else %}
-                    <h2 style="font-family:'NanumSquareB'; margin-bottom:rem;">
-                        Profile 미설정 유저
-                    </h2>
+                <a  class="material-icons"
+                    style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem;"
+                    href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    edit
+                </a>
                 {% endif %}
+            </h2>
+
+            <h4 style="margin-bottom:2rem;">
+                {{ target_user.profile.message }}
+            </h4>
+            {% else %}
+            <h2 style="font-family:'NanumSquareB';">
+                {% if target_user == user %}
+                <a href="{% url 'profileapp:create' %}">
+                    Create Profile
+                </a>
+                {% else %}
+                    프로필 미설정 유저
+               {% endif %}
+            </h2>
             {% endif %}
 
             {% if target_user == user %}
-            <a  class="material-icons"
-                style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding; .4rem;"
+            <a  class="material-icons icon-shadow"
                 href="{% url 'accountapp:update' pk=target_user.pk %}">
                 settings
             </a>
-            <a  class="material-icons"
-                style="box-shadow: 0 0 4px #fcc; border-radius: 10rem; padding; .4rem;"
+            <a  class="material-icons icon-shadow"
                 href="{% url 'accountapp:delete' pk=target_user.pk %}">
                 cancel
             </a>
@@ -55,6 +49,5 @@
             {% include 'snippets/list_fragment.html' with target_article=object_list %}
         </div>
     </div>
-
 
 {% endblock %}

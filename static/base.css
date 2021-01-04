@@ -3,7 +3,7 @@
 }
 
 .header_nav {
-    margin: 0 2rem;
+    margin: 0 0.5rem;
 }
 
 .header_navbar {
@@ -11,7 +11,8 @@
 }
 
 .footer_div {
-    text-align:center; margin: 2rem 0;
+    text-align:center;
+    margin-top: 2rem;
 }
 
 .footer_link {
@@ -23,9 +24,21 @@
     font-family: 'Lobster', cursive;
 }
 
+.forms_div {
+    text-align:center;
+    max-width: 500px;
+    margin 4rem auto;
+}
+
+.material-icons icon-shadow{
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 10rem;
+    padding; .4rem;
+}
+
 .profile_img{
-    height:15rem;
-    width:15rem;
+    height:12rem;
+    width:12rem;
     border-radius:20rem;
     margin-bottom:2rem;
     object-fit: cover;
