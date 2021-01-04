@@ -84,3 +84,5 @@ __pycache__/
 etc/
 
 media/
+
+.Dockerfile
